@@ -1737,6 +1737,7 @@ function EasyMDE(options) {
     if (options.autosave != undefined && options.autosave.unique_id != undefined && options.autosave.unique_id != '')
         options.autosave.uniqueId = options.autosave.unique_id;
 
+    options.containerClasses = ['EasyMDEContainer'].concat(options.containerClasses || []);
 
     // Update this options
     this.options = options;
@@ -2027,7 +2028,7 @@ EasyMDE.prototype.render = function (el) {
     // Wrap Codemirror with container before create toolbar, etc,
     // to use with sideBySideFullscreen option.
     var easyMDEContainer = document.createElement('div');
-    easyMDEContainer.classList.add('EasyMDEContainer');
+    easyMDEContainer.classList.add.apply(easyMDEContainer.classList, options.containerClasses);
     var cmWrapper = this.codemirror.getWrapperElement();
     cmWrapper.parentNode.insertBefore(easyMDEContainer, cmWrapper);
     easyMDEContainer.appendChild(cmWrapper);

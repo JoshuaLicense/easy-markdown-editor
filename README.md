@@ -128,6 +128,7 @@ easyMDE.value('New input for **EasyMDE**');
   - **bold**: Can be set to `**` or `__`. Defaults to `**`.
   - **code**: Can be set to  ```` ``` ```` or `~~~`.  Defaults to ```` ``` ````.
   - **italic**: Can be set to `*` or `_`. Defaults to `*`.
+- **containerClasses**: Additional classes to be added to the `.EasyMDEContainer` as an array.
 - **element**: The DOM element for the TextArea to use. Defaults to the first TextArea on the page.
 - **forceSync**: If set to `true`, force text changes made in EasyMDE to be immediately stored in original text area. Defaults to `false`.
 - **hideIcons**: An array of icon names to hide. Can be used to hide specific icons shown by default without completely customizing the toolbar.
@@ -226,6 +227,7 @@ var editor = new EasyMDE({
 		bold: "__",
 		italic: "_",
 	},
+	containerClasses: ["custom-container"],
 	element: document.getElementById("MyID"),
 	forceSync: true,
 	hideIcons: ["guide", "heading"],
